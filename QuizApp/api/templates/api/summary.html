@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block content %}
+<section style="max-width: 600px; margin: 50px auto; padding: 30px; border: 2px solid #ddd; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); text-align: center; font-family: Arial, sans-serif; background-color: #fff;">
+    <h1 style="color: #333; font-size: 28px; margin-bottom: 20px;">Quiz Summary</h1>
+
+    <div style="font-size: 24px; font-weight: bold; margin-bottom: 30px; color: #007BFF;">
+        YOUR SCORE: <span style="font-size: 32px; color: #28a745;">{{ score }}</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+        <div style="padding: 20px; background-color: #f1f1f1; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+            <strong style="font-size: 20px; color: #333;">Total Questions</strong>
+            <div style="font-size: 22px; font-weight: bold; color: #000000;">{{ correct_answers|add:incorrect_answers }}</div>
+        </div>
+
+        <div style="padding: 20px; background-color: #d4edda; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+            <strong style="font-size: 20px; color: #333;">Correct Answers</strong>
+            <div style="font-size: 22px; font-weight: bold; color: #28a745;">{{ correct_answers }}</div>
+        </div>
+
+        <div style="padding: 20px; background-color: #f8d7da; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+            <strong style="font-size: 20px; color: #333;">Incorrect Answers</strong>
+            <div style="font-size: 22px; font-weight: bold; color: #dc3545;">{{ incorrect_answers }}</div>
+        </div>
+    </div>
+
+    <div style="font-size: 18px; color: #555; margin-top: 20px;">
+        <strong>Time Spent:</strong> <span style="font-weight: bold; color: #007BFF;">{{ time_spent }}</span>
+    </div>
+</section>
+{% endblock %}

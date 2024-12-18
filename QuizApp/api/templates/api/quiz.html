@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Quiz</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9;">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div style="border: 2px solid #ddd; border-radius: 8px; padding: 20px; width: 400px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+            <h1 style="color: #333;">Welcome to the Quiz!</h1>
+            <p style="color: #666; font-size: 16px;">Click the button below to start the quiz.</p>
+            <form action="{% url 'get_question' session_id=session_id %}" method="get">
+                <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    Start Quiz
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
